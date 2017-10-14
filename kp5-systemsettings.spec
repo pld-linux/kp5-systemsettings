@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.4.0
+%define		kdeplasmaver	5.11.0
 %define		qtver		5.3.2
 %define		kpname		systemsettings
 Summary:	KDE system settings
 Name:		kp5-%{kpname}
-Version:	5.4.0
+Version:	5.11.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	f9ecb5f57ff0675b6ed332d7a88be3fd
+# Source0-md5:	cd5e8445cc76a04ea5623b8c72ee155f
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
@@ -21,6 +21,7 @@ BuildRequires:	kf5-khtml-devel
 BuildRequires:	kf5-ki18n-devel
 BuildRequires:	kf5-kiconthemes-devel
 BuildRequires:	kf5-kio-devel
+BuildRequires:	kf5-kirigami2-devel
 BuildRequires:	kf5-kitemviews-devel
 BuildRequires:	kf5-kservice-devel
 BuildRequires:	kf5-kwindowsystem-devel
@@ -82,6 +83,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kservicetypes5/systemsettings*.desktop
 %{_datadir}/kxmlgui5/systemsettings
 %{_datadir}/systemsettings
+%{_libdir}/qt5/plugins/systemsettings_sidebar_mode.so
+%{_datadir}/kpackage/genericqml/org.kde.systemsettings.sidebar
 
 %files devel
 %defattr(644,root,root,755)
