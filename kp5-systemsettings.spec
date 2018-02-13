@@ -13,9 +13,12 @@ URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
 BuildRequires:	kf5-extra-cmake-modules >= 1.4.0
+BuildRequires:	kf5-kactivities-devel
+BuildRequires:	kf5-kactivities-stats-devel
 BuildRequires:	kf5-kcmutils-devel
 BuildRequires:	kf5-kconfig-devel
 BuildRequires:	kf5-kdbusaddons-devel
+BuildRequires:	kf5-kdeclarative-devel
 BuildRequires:	kf5-kdoctools-devel
 BuildRequires:	kf5-khtml-devel
 BuildRequires:	kf5-ki18n-devel
