@@ -26,6 +26,7 @@ BuildRequires:	kf5-kiconthemes-devel
 BuildRequires:	kf5-kio-devel
 BuildRequires:	kf5-kirigami2-devel
 BuildRequires:	kf5-kitemviews-devel
+BuildRequires:	kf5-kparts-devel
 BuildRequires:	kf5-kservice-devel
 BuildRequires:	kf5-kwindowsystem-devel
 BuildRequires:	kf5-kxmlgui-devel
