@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.15.3
+%define		kdeplasmaver	5.21.2
 %define		qtver		5.9.0
 %define		kpname		systemsettings
 Summary:	KDE system settings
 Name:		kp5-%{kpname}
-Version:	5.15.3
+Version:	5.21.2
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	f810c5ba6b68101e38f15da534d29d1a
+# Source0-md5:	7ffc96d3050ccac979fbbaa60653969c
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
@@ -61,6 +61,7 @@ rm -rf po/id
 cd build
 %cmake -G Ninja \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
+	-DHTML_INSTALL_DIR=%{_kdedocdir} \
 	..
 %ninja_build
 
@@ -78,22 +79,17 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kpname}.lang
 %defattr(644,root,root,755)
-/etc/xdg/systemsettings.categories
 %attr(755,root,root) %{_bindir}/systemsettings5
-%attr(755,root,root) %{_libdir}/libsystemsettingsview.so.3
-%attr(755,root,root) %{_libdir}/qt5/plugins/classic_mode.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/icon_mode.so
 %{_desktopdir}/kdesystemsettings.desktop
 %{_desktopdir}/systemsettings.desktop
 %{_datadir}/kservices5/settings-*.desktop
 %{_datadir}/kservicetypes5/systemsettings*.desktop
 %{_datadir}/kxmlgui5/systemsettings
 %{_datadir}/systemsettings
-%{_libdir}/qt5/plugins/systemsettings_sidebar_mode.so
 %{_datadir}/kpackage/genericqml/org.kde.systemsettings.sidebar
-
-%files devel
-%defattr(644,root,root,755)
-%{_includedir}/systemsettingsview
-%attr(755,root,root) %{_libdir}/libsystemsettingsview.so
-
+%{_datadir}/metainfo/org.kde.systemsettings.metainfo.xml
+%{_datadir}/qlogging-categories5/systemsettings.categories
+%dir %{_libdir}/qt5/plugins/systemsettingsview
+%attr(755,root,root) %{_libdir}/qt5/plugins/systemsettingsview/icon_mode.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/systemsettingsview/systemsettings_sidebar_mode.so
+%{_datadir}/kglobalaccel/systemsettings.desktop
