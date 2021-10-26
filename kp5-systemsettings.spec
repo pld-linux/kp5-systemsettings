@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.23.1
+%define		kdeplasmaver	5.23.2
 %define		qtver		5.9.0
 %define		kpname		systemsettings
 Summary:	KDE system settings
 Name:		kp5-%{kpname}
-Version:	5.23.1
+Version:	5.23.2
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	42e9316f5c9359ad7422fc843f575c79
+# Source0-md5:	7687778c5923e1fa4e364da4b0704503
 URL:		https://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
