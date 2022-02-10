@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.23.5
+%define		kdeplasmaver	5.24.0
 %define		qtver		5.9.0
 %define		kpname		systemsettings
 Summary:	KDE system settings
 Name:		kp5-%{kpname}
-Version:	5.23.5
+Version:	5.24.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	ab9ad1559f5ed8eda690b4cd16670738
+# Source0-md5:	3c7a50b0eb124cb6d1886cc89a0de5e8
 URL:		https://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
@@ -95,3 +95,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kglobalaccel/systemsettings.desktop
 %attr(755,root,root) %{_libdir}/libsystemsettingsview.so.3
 %{_libdir}/qt5/plugins/kf5/krunner/krunner_systemsettings.so
+%attr(755,root,root) %{_bindir}/systemsettings
+%{_datadir}/kservicetypes5/infocenterexternalapp.desktop
