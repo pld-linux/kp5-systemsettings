@@ -4,7 +4,7 @@
 Summary:	KDE system settings
 Name:		kp5-%{kpname}
 Version:	5.24.2
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
